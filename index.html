@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidade — Prestanista</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; line-height: 1.7; }
+    header { background: linear-gradient(135deg, #1a6b5a, #e87722); color: white; padding: 40px 24px 32px; text-align: center; }
+    header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 6px; }
+    header p { font-size: 0.95rem; opacity: 0.85; }
+    main { max-width: 780px; margin: 32px auto; padding: 0 20px 60px; }
+    section { background: white; border-radius: 12px; padding: 28px 32px; margin-bottom: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+    h2 { font-size: 1.1rem; font-weight: 700; color: #1a6b5a; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px solid #e8f5f0; }
+    p, li { font-size: 0.97rem; color: #444; margin-bottom: 10px; }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .highlight { background: #e8f5f0; border-left: 4px solid #1a6b5a; border-radius: 6px; padding: 14px 18px; margin: 14px 0; font-size: 0.95rem; color: #1a4a3a; }
+    .badge { display: inline-block; background: #1a6b5a; color: white; font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-right: 6px; vertical-align: middle; }
+    a { color: #1a6b5a; text-decoration: none; }
+    footer { text-align: center; font-size: 0.82rem; color: #999; padding: 24px; }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Política de Privacidade</h1>
+  <p>Prestanista — Aplicativo de Gestão de Vendas a Prazo</p>
+</header>
+<main>
+  <section>
+    <h2>📋 Visão Geral</h2>
+    <p>O <strong>Prestanista</strong> é um aplicativo desenvolvido pela <strong>Koios Apps</strong> (contato: <a href="mailto:toth.apps2026@gmail.com">toth.apps2026@gmail.com</a>) para ajudar vendedores, sacoleiras e microempreendedores a controlar suas vendas a prazo, clientes e recebimentos.</p>
+    <div class="highlight"><strong>Princípio fundamental:</strong> Seus dados pertencem a você. O desenvolvedor <strong>não armazena, não acessa e não compartilha</strong> nenhuma informação pessoal dos usuários ou de seus clientes. Tudo fica no seu dispositivo e no seu Google Drive.</div>
+    <p><em>Última atualização: abril de 2026</em></p>
+  </section>
+  <section>
+    <h2>📦 Quais dados o app utiliza</h2>
+    <ul>
+      <li><span class="badge">Local</span> <strong>Dados de clientes e vendas</strong> — cadastro de clientes, produtos, vendas e parcelas. Armazenados apenas no banco de dados local do seu dispositivo (SQLite). O desenvolvedor não tem acesso a esses dados.</li>
+      <li><span class="badge">Google</span> <strong>Conta Google (login)</strong> — usamos o login Google para identificar o usuário e organizar o backup. Apenas nome e email são lidos para essa finalidade.</li>
+      <li><span class="badge">Drive</span> <strong>Google Drive (backup)</strong> — o app cria uma pasta <em>PrestanistaBkp</em> no seu Google Drive pessoal. O arquivo é criptografado antes do envio. Apenas você tem acesso a essa pasta.</li>
+      <li><span class="badge">Câmera</span> <strong>Câmera / galeria (opcional)</strong> — usada apenas para adicionar fotos de clientes e produtos. As fotos ficam armazenadas localmente.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>🚫 O que o app NÃO faz</h2>
+    <ul>
+      <li>Não envia seus dados para servidores do desenvolvedor</li>
+      <li>Não compartilha dados com terceiros ou anunciantes</li>
+      <li>Não rastreia sua localização</li>
+      <li>Não acessa contatos, SMS ou chamadas</li>
+      <li>Não exibe anúncios</li>
+      <li>Não coleta dados de crianças</li>
+    </ul>
+  </section>
+  <section>
+    <h2>☁️ Backup no Google Drive</h2>
+    <p>O backup é uma cópia criptografada enviada para a pasta <strong>PrestanistaBkp</strong> no <em>seu</em> Google Drive.</p>
+    <ul>
+      <li>O banco de dados é criptografado no dispositivo antes de qualquer transferência</li>
+      <li>O arquivo criptografado é enviado para o Google Drive da sua conta</li>
+      <li>O desenvolvedor não tem acesso à sua conta do Drive nem ao arquivo</li>
+      <li>Você pode excluir o backup a qualquer momento pelo próprio Google Drive</li>
+    </ul>
+    <div class="highlight">A chave de criptografia é derivada do login da sua conta Google e nunca sai do dispositivo.</div>
+  </section>
+  <section>
+    <h2>🔐 Segurança</h2>
+    <ul>
+      <li>Banco de dados local criptografado (SQLCipher)</li>
+      <li>Backup criptografado com chave única por usuário (AES-256 via Fernet)</li>
+      <li>Sem transmissão de dados para servidores externos</li>
+      <li>Autenticação via Google OAuth (sem senhas armazenadas no app)</li>
+    </ul>
+  </section>
+  <section>
+    <h2>👤 Seus direitos (LGPD)</h2>
+    <p>Em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>, você tem o direito de:</p>
+    <ul>
+      <li><strong>Acessar</strong> seus dados — todos estão no seu dispositivo e Drive</li>
+      <li><strong>Corrigir</strong> dados incorretos — diretamente pelo app</li>
+      <li><strong>Excluir</strong> seus dados — apague o app e exclua a pasta no Drive</li>
+      <li><strong>Portabilidade</strong> — o arquivo de banco pode ser exportado</li>
+      <li><strong>Revogar consentimento</strong> — desinstale o app a qualquer momento</li>
+    </ul>
+    <p>Como o desenvolvedor não possui seus dados, não há necessidade de solicitação formal para exclusão.</p>
+  </section>
+  <section>
+    <h2>👶 Crianças</h2>
+    <p>O Prestanista é destinado exclusivamente a adultos (maiores de 18 anos) para uso comercial. Não coletamos intencionalmente dados de crianças.</p>
+  </section>
+  <section>
+    <h2>✏️ Alterações nesta política</h2>
+    <p>Esta política pode ser atualizada periodicamente. Quando houver mudanças relevantes, notificaremos dentro do app.</p>
+  </section>
+  <section>
+    <h2>📬 Contato</h2>
+    <p><strong>Koios Apps</strong><br/>Email: <a href="mailto:toth.apps2026@gmail.com">toth.apps2026@gmail.com</a><br/>Vitória, Espírito Santo — Brasil</p>
+  </section>
+</main>
+<footer>© 2026 Koios Apps · Prestanista · Todos os direitos reservados</footer>
+</body>
+</html>
