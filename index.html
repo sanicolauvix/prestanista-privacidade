@@ -32,17 +32,19 @@
     <h2>📋 Visão Geral</h2>
     <p>O <strong>Prestanista</strong> é um aplicativo desenvolvido pela <strong>Koios Apps</strong> (contato: <a href="mailto:toth.apps2026@gmail.com">toth.apps2026@gmail.com</a>) para ajudar vendedores, sacoleiras e microempreendedores a controlar suas vendas a prazo, clientes e recebimentos.</p>
     <div class="highlight"><strong>Princípio fundamental:</strong> Seus dados pertencem a você. O desenvolvedor <strong>não armazena, não acessa e não compartilha</strong> nenhuma informação pessoal dos usuários ou de seus clientes. Tudo fica no seu dispositivo e no seu Google Drive.</div>
-    <p><em>Última atualização: abril de 2026</em></p>
+    <p><em>Última atualização: junho de 2026</em></p>
   </section>
+
   <section>
     <h2>📦 Quais dados o app utiliza</h2>
     <ul>
-      <li><span class="badge">Local</span> <strong>Dados de clientes e vendas</strong> — cadastro de clientes, produtos, vendas e parcelas. Armazenados apenas no banco de dados local do seu dispositivo (SQLite). O desenvolvedor não tem acesso a esses dados.</li>
-      <li><span class="badge">Google</span> <strong>Conta Google (login)</strong> — usamos o login Google para identificar o usuário e organizar o backup. Apenas nome e email são lidos para essa finalidade.</li>
-      <li><span class="badge">Drive</span> <strong>Google Drive (backup)</strong> — o app cria uma pasta <em>PrestanistaBkp</em> no seu Google Drive pessoal. O arquivo é criptografado antes do envio. Apenas você tem acesso a essa pasta.</li>
-      <li><span class="badge">Câmera</span> <strong>Câmera / galeria (opcional)</strong> — usada apenas para adicionar fotos de clientes e produtos. As fotos ficam armazenadas localmente.</li>
+      <li><span class="badge">Local</span> <strong>Dados de clientes e vendas</strong> — cadastro de clientes, produtos, vendas, compras e registros financeiros. Inseridos manualmente pelo próprio usuário e armazenados apenas no banco de dados local do dispositivo (SQLite). O desenvolvedor não tem acesso a esses dados.</li>
+      <li><span class="badge">Google</span> <strong>Conta Google (autenticação)</strong> — o e-mail da conta Google é lido exclusivamente para autenticação via OAuth 2.0. Ele não é enviado, armazenado nem compartilhado pelo Prestanista.</li>
+      <li><span class="badge">Drive</span> <strong>Google Drive (backup automático)</strong> — o app sincroniza automaticamente os dados com o seu próprio Google Drive como medida de segurança. O desenvolvedor não tem acesso à sua conta do Drive nem aos arquivos armazenados.</li>
+      <li><span class="badge">Câmera</span> <strong>Câmera / galeria (opcional)</strong> — usada apenas para adicionar fotos de clientes, fornecedores e produtos. As fotos ficam armazenadas localmente e podem ser sincronizadas com o seu Google Drive.</li>
     </ul>
   </section>
+
   <section>
     <h2>🚫 O que o app NÃO faz</h2>
     <ul>
@@ -54,49 +56,61 @@
       <li>Não coleta dados de crianças</li>
     </ul>
   </section>
+
   <section>
-    <h2>☁️ Backup no Google Drive</h2>
-    <p>O backup é uma cópia criptografada enviada para a pasta <strong>PrestanistaBkp</strong> no <em>seu</em> Google Drive.</p>
+    <h2>☁️ Sincronização automática com o Google Drive</h2>
+    <p>O Prestanista sincroniza seus dados automaticamente com o seu próprio Google Drive como medida de segurança — não é opcional. Essa sincronização garante que você não perca seus dados em caso de perda, troca ou falha do dispositivo.</p>
     <ul>
-      <li>O banco de dados é criptografado no dispositivo antes de qualquer transferência</li>
-      <li>O arquivo criptografado é enviado para o Google Drive da sua conta</li>
-      <li>O desenvolvedor não tem acesso à sua conta do Drive nem ao arquivo</li>
-      <li>Você pode excluir o backup a qualquer momento pelo próprio Google Drive</li>
+      <li>Os dados são salvos na pasta <strong>Eco_Koios/Prestanista</strong> no <em>seu</em> Google Drive</li>
+      <li>O app mantém até <strong>10 versões de backup</strong> para permitir recuperação em diferentes pontos no tempo</li>
+      <li>O desenvolvedor não tem acesso à sua conta do Drive nem aos arquivos armazenados</li>
+      <li>Você pode visualizar ou excluir os backups a qualquer momento pelo próprio Google Drive</li>
     </ul>
-    <div class="highlight">A chave de criptografia é derivada do login da sua conta Google e nunca sai do dispositivo.</div>
+    <div class="highlight">Todos os dados armazenados no Drive pertencem exclusivamente ao titular da conta Google utilizada no login.</div>
   </section>
+
   <section>
     <h2>🔐 Segurança</h2>
     <ul>
-      <li>Banco de dados local criptografado (SQLCipher)</li>
-      <li>Backup criptografado com chave única por usuário (AES-256 via Fernet)</li>
-      <li>Sem transmissão de dados para servidores externos</li>
-      <li>Autenticação via Google OAuth (sem senhas armazenadas no app)</li>
+      <li>Autenticação via Google OAuth 2.0 (sem senhas armazenadas no app)</li>
+      <li>Dados armazenados localmente no diretório privado do app no dispositivo</li>
+      <li>Sincronização feita diretamente para o Google Drive do próprio usuário, sem passar por servidores do desenvolvedor</li>
+      <li>Acesso ao Drive protegido pelo sistema de permissões OAuth do Google</li>
     </ul>
   </section>
+
+  <section>
+    <h2>💳 Pagamentos (versões futuras)</h2>
+    <p>Em versões futuras com assinatura paga, o e-mail da conta Google poderá ser armazenado pelo desenvolvedor exclusivamente para gestão de licença. Os dados de pagamento serão processados por uma plataforma intermediária (ex.: Mercado Pago ou Google Play Billing) e <strong>nunca armazenados pelo app</strong>.</p>
+  </section>
+
   <section>
     <h2>👤 Seus direitos (LGPD)</h2>
     <p>Em conformidade com a <strong>Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018)</strong>, você tem o direito de:</p>
     <ul>
       <li><strong>Acessar</strong> seus dados — todos estão no seu dispositivo e Drive</li>
       <li><strong>Corrigir</strong> dados incorretos — diretamente pelo app</li>
-      <li><strong>Excluir</strong> seus dados — apague o app e exclua a pasta no Drive</li>
+      <li><strong>Excluir</strong> seus dados — pelo menu "Privacidade / LGPD" > "Seus Dados" no app, ou desinstale o app e exclua a pasta no Drive</li>
       <li><strong>Portabilidade</strong> — o arquivo de banco pode ser exportado</li>
       <li><strong>Revogar consentimento</strong> — desinstale o app a qualquer momento</li>
     </ul>
     <p>Como o desenvolvedor não possui seus dados, não há necessidade de solicitação formal para exclusão.</p>
+    <p>Para dúvidas ou solicitações: <a href="https://wa.me/5527999537039">WhatsApp (27) 99953-7039</a></p>
   </section>
+
   <section>
     <h2>👶 Crianças</h2>
     <p>O Prestanista é destinado exclusivamente a adultos (maiores de 18 anos) para uso comercial. Não coletamos intencionalmente dados de crianças.</p>
   </section>
+
   <section>
     <h2>✏️ Alterações nesta política</h2>
-    <p>Esta política pode ser atualizada periodicamente. Quando houver mudanças relevantes, notificaremos dentro do app.</p>
+    <p>Esta política pode ser atualizada periodicamente. Quando houver mudanças relevantes, uma nova tela de aceite obrigatório será exibida ao abrir o aplicativo.</p>
   </section>
+
   <section>
     <h2>📬 Contato</h2>
-    <p><strong>Koios Apps</strong><br/>Email: <a href="mailto:toth.apps2026@gmail.com">toth.apps2026@gmail.com</a><br/>Vitória, Espírito Santo — Brasil</p>
+    <p><strong>Koios Apps</strong><br/>Email: <a href="mailto:toth.apps2026@gmail.com">toth.apps2026@gmail.com</a><br/>WhatsApp: <a href="https://wa.me/5527999537039">(27) 99953-7039</a><br/>Vitória, Espírito Santo — Brasil</p>
   </section>
 </main>
 <footer>© 2026 Koios Apps · Prestanista · Todos os direitos reservados</footer>
